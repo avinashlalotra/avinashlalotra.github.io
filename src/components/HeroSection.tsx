@@ -30,7 +30,7 @@ const HeroSection = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent">
             🧠 Welcome to<br />
-            Low-Level Quest
+            Bits, Boot, and Beyond
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

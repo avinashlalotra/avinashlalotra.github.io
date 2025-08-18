@@ -11,8 +11,8 @@ const Header = () => {
               <Terminal className="h-6 w-6 text-terminal-green" />
             </div>
             <div>
-              <h1 className="text-xl font-bold font-mono text-terminal-green">
-                Low-Level Quest
+                <h1 className="text-xl font-bold font-mono text-terminal-green">
+                Bits, Boot, and Beyond
               </h1>
               <p className="text-sm text-muted-foreground">Abinash Singh</p>
             </div>

@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold font-mono text-terminal-green">
-                  Low-Level Quest
+                  Bits, Boot, and Beyond
                 </h3>
                 <p className="text-sm text-muted-foreground">Abinash Singh</p>
               </div>
