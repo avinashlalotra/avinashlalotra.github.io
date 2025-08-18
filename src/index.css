@@ -120,6 +120,63 @@ All colors MUST be HSL.
     color: hsl(var(--terminal-green));
   }
 
+  /* Terminal window styles */
+  .terminal-window {
+    background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2));
+    border: 1px solid hsl(var(--border) / 0.6);
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-terminal);
+    width: 100%;
+    max-width: none;
+    cursor: text;
+  }
+
+  .terminal-window:focus {
+    outline: 2px solid hsl(var(--terminal-green) / 0.12);
+  }
+
+  .terminal-body {
+    min-height: 8rem;
+  }
+
+  .terminal-line {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: hsl(var(--terminal-green-dim));
+  }
+
+  .terminal-prompt {
+    color: hsl(var(--terminal-green));
+    font-weight: 600;
+  }
+
+  .terminal-text {
+    color: hsl(var(--foreground));
+    font-size: 0.95rem;
+  }
+
+  .terminal-current .terminal-text {
+    color: hsl(var(--terminal-green));
+  }
+
+  .terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: hsl(var(--foreground));
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
   .glow-effect {
     animation: glow-pulse 3s ease-in-out infinite;
   }

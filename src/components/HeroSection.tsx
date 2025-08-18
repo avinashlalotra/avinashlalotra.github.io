@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Terminal from "@/components/ui/terminal";
 import { ArrowDown, Code, Cpu, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-circuit.jpg";
 
@@ -21,13 +22,12 @@ const HeroSection = () => {
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-terminal-green/10 rounded-full blur-2xl" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 text-center slide-in">
-        <div className="max-w-4xl mx-auto">
-          {/* Terminal-style greeting */}
-          <div className="font-mono text-terminal-green mb-6">
-            <span className="text-muted-foreground">$</span> whoami
+  <div className="relative z-10 container mx-auto px-4 slide-in">
+  <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+          <div className="flex justify-center lg:justify-end">
+            <Terminal className="mt-6 lg:mt-0 w-full" />
           </div>
-          
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent">
             🧠 Welcome to<br />
             Bits, Boot, and Beyond
@@ -38,7 +38,7 @@ const HeroSection = () => {
             a curious explorer of the low-level world of computers. This blog is my personal lab notebook 
             where I document my hands-on journey through the depths of system programming.
           </p>
-
+           
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <Badge variant="secondary" className="px-4 py-2 text-sm font-mono">
@@ -71,13 +71,13 @@ const HeroSection = () => {
               View Projects
             </Button>
           </div>
-
           {/* Scroll Indicator */}
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-start">
             <div className="animate-bounce">
               <ArrowDown className="h-6 w-6 text-terminal-green" />
             </div>
           </div>
+
         </div>
       </div>
     </section>
