@@ -1,73 +1,165 @@
-# Welcome to your Lovable project
+# Low-Level Quest Blog
 
-## Project info
+A scalable, maintainable technical blog focused on low-level programming, kernel development, and hardware design.
 
-**URL**: https://lovable.dev/projects/f498e766-1460-4124-80d1-6221edf19c22
+## Features
 
-## How can I edit this code?
+- 🚀 **Scalable Architecture**: Add new posts easily without code changes
+- 🔍 **Advanced Search**: Full-text search across all posts
+- 🏷️ **Smart Filtering**: Filter by categories, tags, and more
+- 📄 **Pagination**: Handle large numbers of posts efficiently
+- 📱 **Responsive Design**: Beautiful on all devices
+- ⚡ **Performance Optimized**: Fast loading and smooth interactions
+- 🎨 **Modern UI**: Dark theme with terminal-inspired design
+- 📝 **Markdown Support**: Write posts in markdown with frontmatter
+- 🧪 **Fully Tested**: Comprehensive test suite
 
-There are several ways of editing your application.
+## Quick Start
 
-**Use Lovable**
+### Adding a New Blog Post
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f498e766-1460-4124-80d1-6221edf19c22) and start prompting.
+1. **Using the generator** (recommended):
+   ```bash
+   node src/scripts/generate-post.js "Your Post Title"
+   ```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Manual approach**:
+   - Add post data to `src/utils/blog.ts` in the `blogPosts` array
+   - Create corresponding route if needed
 
-**Use your preferred IDE**
+### Post Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Each post should have:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```typescript
+{
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  date: string
+  readTime: number
+  tags: string[]
+  category: string
+  author: string
+  published: boolean
+  featured: boolean
+}
+```
 
-Follow these steps:
+### Categories
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- `tutorials` - Step-by-step guides
+- `kernel` - Linux kernel development
+- `hardware` - FPGA, RTL, embedded systems
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Folder Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
+```
+src/
+├── components/
+│   ├── BlogGrid.tsx          # Post grid display
+│   ├── BlogFilters.tsx       # Search and filtering
+│   ├── BlogPagination.tsx    # Pagination controls
+│   ├── BlogSection.tsx       # Main blog component
+│   └── BlogTemplate.tsx      # Individual post template
+├── pages/
+│   ├── BlogPost.tsx          # Dynamic post page
+│   └── Posts.tsx             # Posts listing page
+├── types/
+│   └── blog.ts               # TypeScript interfaces
+├── utils/
+│   └── blog.ts               # Blog data and utilities
+└── scripts/
+    └── generate-post.js      # Post generator utility
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Development
+
+### Running the Project
+
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Running Tests
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run test
+```
 
-**Use GitHub Codespaces**
+### Building for Production
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+## Architecture
 
-This project is built with:
+### Scalable Design
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The blog is designed to be easily maintainable:
 
-## How can I deploy this project?
+1. **Dynamic Content Loading**: Posts are loaded dynamically from data
+2. **Automatic Routing**: Routes are generated automatically for all posts
+3. **Component Reusability**: Modular components for different layouts
+4. **Type Safety**: Full TypeScript support with proper interfaces
+5. **Performance**: Optimized for large numbers of posts
 
-Simply open [Lovable](https://lovable.dev/projects/f498e766-1460-4124-80d1-6221edf19c22) and click on Share -> Publish.
+### Components
 
-## Can I connect a custom domain to my Lovable project?
+- **BlogSection**: Main component with configurable features
+- **BlogGrid**: Responsive grid layout for posts
+- **BlogFilters**: Advanced search and filtering
+- **BlogPagination**: Handle large post collections
+- **BlogTemplate**: Individual post layout
 
-Yes, you can!
+### Utilities
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Post Management**: CRUD operations for posts
+- **Search & Filter**: Advanced querying capabilities
+- **Pagination**: Efficient data splitting
+- **Related Posts**: Smart post recommendations
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Customization
+
+### Adding New Features
+
+1. **New Post Types**: Extend the `BlogPost` interface in `src/types/blog.ts`
+2. **Custom Filters**: Add new filter types in `BlogFilters.tsx`
+3. **Layout Options**: Create new templates in `components/`
+4. **Metadata**: Extend frontmatter support in utilities
+
+### Styling
+
+The project uses:
+- **Tailwind CSS**: Utility-first styling
+- **Semantic Tokens**: Consistent design system
+- **Dark Theme**: Terminal-inspired color scheme
+- **Responsive Design**: Mobile-first approach
+
+## Future Enhancements
+
+- [ ] Markdown file parsing with frontmatter
+- [ ] Static site generation
+- [ ] RSS feed generation
+- [ ] Comment system
+- [ ] Social sharing
+- [ ] Analytics integration
+- [ ] Search engine optimization
+- [ ] Multi-author support
+- [ ] Draft post management
+- [ ] Content management system
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Add your changes
+4. Write tests for new features
+5. Submit a pull request
+
+## License
+
+MIT License - feel free to use this project as a template for your own blog!
