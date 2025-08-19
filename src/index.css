@@ -177,6 +177,15 @@ All colors MUST be HSL.
     font-size: 1rem;
   }
 
+  /* Blog helpers */
+  .prose-invert img {
+    border-radius: 0.5rem;
+  }
+
+  /* Code block helpers */
+  .bg-card { background-color: hsl(var(--card)); }
+
+
   .glow-effect {
     animation: glow-pulse 3s ease-in-out infinite;
   }

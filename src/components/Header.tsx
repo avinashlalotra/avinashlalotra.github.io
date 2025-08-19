@@ -1,5 +1,6 @@
 import { Github, Mail, Terminal, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -19,30 +20,10 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-6">
-            <a 
-              href="#about" 
-              className="text-foreground hover:text-terminal-green transition-colors"
-            >
-              About
-            </a>
-            <a 
-              href="#posts" 
-              className="text-foreground hover:text-terminal-green transition-colors"
-            >
-              Posts
-            </a>
-            <a 
-              href="#topics" 
-              className="text-foreground hover:text-terminal-green transition-colors"
-            >
-              Topics
-            </a>
-            <a 
-              href="#contact" 
-              className="text-foreground hover:text-terminal-green transition-colors"
-            >
-              Contact
-            </a>
+            <NavLink to="/" className="text-foreground hover:text-terminal-green transition-colors">Home</NavLink>
+            <NavLink to="/posts" className="text-foreground hover:text-terminal-green transition-colors">Posts</NavLink>
+            <NavLink to="/topics" className="text-foreground hover:text-terminal-green transition-colors">Topics</NavLink>
+            <NavLink to="/about" className="text-foreground hover:text-terminal-green transition-colors">About</NavLink>
           </nav>
 
           <div className="flex items-center space-x-2">

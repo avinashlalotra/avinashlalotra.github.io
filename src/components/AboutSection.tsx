@@ -140,6 +140,18 @@ const AboutSection = () => {
               ))}
             </div>
           </div>
+
+          <Card className="bg-gradient-card border-border mt-8">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Contact</h3>
+              <p className="text-muted-foreground mb-4">For collaboration or inquiries, drop a line:</p>
+              <div className="flex items-center space-x-3">
+                <a href="mailto:abinash@example.com" className="text-terminal-green font-mono">abinash@example.com</a>
+                <a href="https://github.com/" target="_blank" rel="noreferrer" className="text-muted-foreground">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="text-muted-foreground">LinkedIn</a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

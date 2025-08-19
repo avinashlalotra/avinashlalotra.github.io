@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, GitBranch } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -12,6 +13,15 @@ const blogPosts = [
     tags: ["Linux Kernel", "C Programming", "Tutorial"],
     category: "Kernel Hacking",
     featured: true
+  },
+  {
+    title: "Hello World in C",
+    excerpt: "Minimal hello world example in C and how to build/run it.",
+    date: "2025-08-18",
+    readTime: "2 min read",
+    tags: ["C", "Tutorial"],
+    category: "Tutorial",
+    slug: "hello-world-c"
   },
   {
     title: "RISC-V Core Bring-up on FPGA",
@@ -56,6 +66,7 @@ const blogPosts = [
 ];
 
 const BlogSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="posts" className="py-20">
       <div className="container mx-auto px-4">
@@ -92,7 +103,7 @@ const BlogSection = () => {
                     </Badge>
                   )}
                 </div>
-                <CardTitle className="text-xl font-semibold mb-3 group-hover:text-terminal-green transition-colors">
+                <CardTitle className="text-xl font-semibold mb-3 group-hover:text-terminal-green transition-colors" onClick={() => navigate(`/posts/${post.slug ?? ''}`)}>
                   {post.title}
                 </CardTitle>
                 <div className="flex items-center space-x-4 text-sm text-muted-foreground">
@@ -124,6 +135,7 @@ const BlogSection = () => {
                 <Button 
                   variant="ghost" 
                   className="p-0 h-auto text-terminal-green hover:text-terminal-green/80 font-mono"
+                  onClick={() => navigate(`/posts/${post.slug ?? ''}`)}
                 >
                   Read more 
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
