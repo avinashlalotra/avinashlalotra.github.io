@@ -277,6 +277,173 @@ Organize BSP, middleware, and application layers effectively.
     tags: ["yocto", "buildroot", "embedded-linux", "bsp"],
     readTime: 18,
   },
+  {
+    id: "7",
+    title: "Hello World in C: Your First Systems Program",
+    slug: "hello-world-c-program",
+    excerpt: "Start your systems programming journey with the classic Hello World program in C, exploring compilation, linking, and what happens under the hood.",
+    content: `
+# Hello World in C: Your First Systems Program
+
+Every programmer's journey begins with Hello World. Let's explore this simple program and understand what really happens when you compile and run it.
+
+## The Classic Program
+
+\`\`\`c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\\n");
+    return 0;
+}
+\`\`\`
+
+## Breaking It Down
+
+### The Preprocessor Directive
+
+\`\`\`c
+#include <stdio.h>
+\`\`\`
+
+This line tells the preprocessor to include the standard input/output library. The \`printf\` function is declared in this header file.
+
+### The Main Function
+
+Every C program must have a \`main\` function - it is the entry point where execution begins.
+
+\`\`\`c
+int main(void) {
+    // Function body
+    return 0;
+}
+\`\`\`
+
+The \`int\` return type indicates the program returns an integer status code to the operating system. Returning 0 conventionally means successful execution.
+
+### The Printf Function
+
+\`\`\`c
+printf("Hello, World!\\n");
+\`\`\`
+
+\`printf\` is a standard library function that writes formatted output to stdout. The \`\\n\` is an escape sequence representing a newline character.
+
+## Compilation Process
+
+Compiling a C program involves several stages:
+
+### 1. Preprocessing
+
+\`\`\`bash
+gcc -E hello.c -o hello.i
+\`\`\`
+
+The preprocessor handles directives like \`#include\` and \`#define\`, producing an expanded source file.
+
+### 2. Compilation
+
+\`\`\`bash
+gcc -S hello.i -o hello.s
+\`\`\`
+
+The compiler translates C code into assembly language for your target architecture.
+
+### 3. Assembly
+
+\`\`\`bash
+gcc -c hello.s -o hello.o
+\`\`\`
+
+The assembler converts assembly code into machine code, creating an object file.
+
+### 4. Linking
+
+\`\`\`bash
+gcc hello.o -o hello
+\`\`\`
+
+The linker combines your object file with the C standard library and creates the final executable.
+
+## The Complete Build Command
+
+\`\`\`bash
+# Compile and link in one step
+gcc hello.c -o hello
+
+# Run the program
+./hello
+\`\`\`
+
+## What Happens at Runtime?
+
+When you execute \`./hello\`:
+
+1. **Loader**: OS loads the executable into memory
+2. **Dynamic Linking**: Shared libraries (like libc) are loaded
+3. **Stack Setup**: Runtime stack is initialized
+4. **main() Execution**: Control transfers to main function
+5. **System Call**: printf internally calls the write() system call
+6. **Exit**: Program returns 0, OS reclaims resources
+
+## Advanced Variations
+
+### Without Standard Library
+
+\`\`\`c
+// Compile with: gcc -nostdlib -static hello_raw.c -o hello_raw
+void _start() {
+    const char msg[] = "Hello, World!\\n";
+    
+    // Direct system call
+    asm("movq $1, %%rax\\n"      // sys_write
+        "movq $1, %%rdi\\n"      // stdout
+        "movq %0, %%rsi\\n"      // buffer
+        "movq $14, %%rdx\\n"     // length
+        "syscall\\n"
+        :
+        : "r"(msg)
+        : "%rax", "%rdi", "%rsi", "%rdx");
+    
+    // sys_exit
+    asm("movq $60, %%rax\\n"
+        "xorq %%rdi, %%rdi\\n"
+        "syscall\\n");
+}
+\`\`\`
+
+This bare-metal version makes direct system calls without using the C standard library!
+
+## Common Mistakes
+
+### Missing Header
+\`\`\`c
+// Error: implicit declaration of printf
+int main(void) {
+    printf("Hello\\n");  // Compiler warning!
+    return 0;
+}
+\`\`\`
+
+### Wrong Return Type
+\`\`\`c
+void main() {  // Non-standard!
+    printf("Hello\\n");
+}
+\`\`\`
+
+Always use \`int main(void)\` or \`int main(int argc, char *argv[])\`.
+
+## Conclusion
+
+While Hello World seems trivial, it demonstrates fundamental concepts: preprocessing, compilation, linking, system calls, and runtime behavior. Understanding these basics is essential for systems programming.
+    `,
+    date: "2025-01-18",
+    author: "Avinash Lalotra",
+    category: "Linux",
+    tags: ["c-programming", "compilation", "system-calls", "beginner"],
+    readTime: 10,
+  },
 ];
 
 export const getFeaturedPosts = () => blogPosts.slice(0, 3);
