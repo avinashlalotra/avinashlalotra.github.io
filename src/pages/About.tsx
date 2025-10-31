@@ -10,7 +10,7 @@ const About = () => {
     <>
       <Helmet>
         <title>About | Bits, Boot & Beyond</title>
-        <meta name="description" content="Learn about Avinash Lalotra and his journey in systems programming, Linux kernel development, embedded systems, and FPGA design." />
+        <meta name="description" content="Learn about Abinash Lalotra and his journey in systems programming, Linux kernel development, embedded systems, and FPGA design." />
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
@@ -42,7 +42,7 @@ const About = () => {
                       Welcome to <strong>Bits, Boot & Beyond</strong> – my corner of the internet where I explore the fascinating world of low-level systems programming, kernel development, and hardware design.
                     </p>
                     <p>
-                      With years of experience in embedded Linux, kernel internals, SoC architecture, and FPGA development, I've developed a deep appreciation for the beautiful complexity that lies beneath our modern computing systems.
+                      With deep intrest in embedded Linux, kernel internals, SoC architecture, and FPGA development, I've developed a deep appreciation for the beautiful complexity that lies beneath our modern computing systems.
                     </p>
                     <p>
                       This blog serves as both a learning journal and a resource for others interested in understanding how computers really work – from the moment you press the power button to the kernel scheduler making split-second decisions about which thread to run next.
@@ -55,14 +55,14 @@ const About = () => {
                 <CardContent className="pt-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Code className="h-5 w-5 text-primary" />
-                    Areas of Expertise
+                    Areas of Intrest
                   </h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="p-4 rounded-lg bg-muted">
                       <Terminal className="h-6 w-6 text-primary mb-2" />
-                      <h4 className="font-semibold mb-1">Linux Kernel</h4>
+                      <h4 className="font-semibold mb-1">Linux Kernel & User Space</h4>
                       <p className="text-sm text-muted-foreground">
-                        Threading models, scheduling, memory management, and driver development
+                        Threading models, scheduling, memory management, LibC and driver development
                       </p>
                     </div>
                     <div className="p-4 rounded-lg bg-muted">
@@ -74,9 +74,9 @@ const About = () => {
                     </div>
                     <div className="p-4 rounded-lg bg-muted">
                       <Code className="h-6 w-6 text-accent mb-2" />
-                      <h4 className="font-semibold mb-1">SoC Architecture</h4>
+                      <h4 className="font-semibold mb-1"> Computer Architecture</h4>
                       <p className="text-sm text-muted-foreground">
-                        ARM Cortex-A, cache hierarchies, interconnects, power management
+                        RISC-V, MatrixMul, interconnects
                       </p>
                     </div>
                     <div className="p-4 rounded-lg bg-muted">
@@ -95,19 +95,19 @@ const About = () => {
                   <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
                   <div className="flex flex-wrap gap-4">
                     <Button asChild variant="outline">
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/avinashlalotra" target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
                         GitHub
                       </a>
                     </Button>
                     <Button asChild variant="outline">
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/in/abinashsinghlalotra/" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="mr-2 h-4 w-4" />
                         LinkedIn
                       </a>
                     </Button>
                     <Button asChild variant="outline">
-                      <a href="mailto:contact@example.com">
+                      <a href="mailto:abinashsinghlalotra@gmail.com">
                         <Mail className="mr-2 h-4 w-4" />
                         Email
                       </a>
