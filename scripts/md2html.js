@@ -124,12 +124,9 @@ for (const file of files) {
 </style>
 
 <script>
-  // If React app root exists, do nothing (you're already inside app)
-  if (!document.querySelector('#root')) {
-    // Redirect to the main app, preserving path
-    window.location.replace('/?redirect=' + window.location.pathname);
-  }
+  window.location.replace(window.location.origin + '/?redirect=' + window.location.pathname);
 </script>
+
 
 
 
