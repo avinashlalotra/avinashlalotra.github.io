@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 const srcDir = "public/posts";   // markdown input
-const outDir = "public/posts";   // build output
+const outDir = "public/posts/html";   // build output
 
 await fs.ensureDir(outDir);
 
@@ -136,7 +136,7 @@ for (const file of files) {
 </html>
   `;
 
-  const outPath = path.join(outDir, `${data.slug}/index.html`);
+  const outPath = path.join(outDir, `${data.slug}.html`);
   await fs.ensureDir(path.dirname(outPath));
   fs.writeFileSync(outPath, htmlFragment);
   console.log(`✅ Built: ${outPath}`);
