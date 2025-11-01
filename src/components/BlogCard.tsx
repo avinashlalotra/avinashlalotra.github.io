@@ -17,7 +17,7 @@ const categoryColors = {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <Link to={`/blog/${post.slug}`}>
+    <Link to={`/posts/${post.slug}`}>
       <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50">
         <CardHeader>
           <div className="flex items-start justify-between gap-2 mb-3">

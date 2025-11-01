@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 const srcDir = "public/posts";   // markdown input
-const outDir = "public/posts/html";   // build output
+const outDir = "public/posts";   // build output
 
 await fs.ensureDir(outDir);
 
@@ -123,6 +123,14 @@ for (const file of files) {
   }
 </style>
 
+<script>
+  // If React app root exists, do nothing (you're already inside app)
+  if (!document.querySelector('#root')) {
+    // Redirect to the main app, preserving path
+    window.location.replace('/?redirect=' + window.location.pathname);
+  }
+</script>
+
 
 
 </head>
@@ -136,7 +144,7 @@ for (const file of files) {
 </html>
   `;
 
-  const outPath = path.join(outDir, `${data.slug}.html`);
+  const outPath = path.join(outDir, `${data.slug}/index.html`);
   await fs.ensureDir(path.dirname(outPath));
   fs.writeFileSync(outPath, htmlFragment);
   console.log(`✅ Built: ${outPath}`);

@@ -17,7 +17,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (!post) return;
-    const htmlPath = `/posts/html/${post.slug}.html`;
+    const htmlPath = `/posts/${post.slug}/index.html`;
 
     fetch(htmlPath)
       .then((res) => {
