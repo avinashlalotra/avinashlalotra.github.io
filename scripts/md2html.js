@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-const srcDir = "public/posts";   // markdown input
+const srcDir = "public/content";   // markdown input
 const outDir = "public/posts";   // build output
 
 await fs.ensureDir(outDir);

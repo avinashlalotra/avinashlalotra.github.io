@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-public/posts/html/*
+public/posts/*
 src/data/posts.json
 
 # Editor directories and files

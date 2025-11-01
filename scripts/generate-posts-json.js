@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import matter from 'gray-matter';
 
-const POSTS_DIR = 'public/posts';
+const POSTS_DIR = 'public/content';
 const OUTPUT_FILE = 'src/data/posts.json';
 
 async function generatePostsJson() {
