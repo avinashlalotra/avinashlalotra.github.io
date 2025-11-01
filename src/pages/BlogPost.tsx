@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPostBySlug, blogPosts } from "@/data/posts";
 import Header from "@/components/Header";
@@ -5,13 +6,27 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import BlogCard from "@/components/BlogCard";
 import { Helmet } from "react-helmet";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const post = getPostBySlug(slug || "");
+  const [htmlContent, setHtmlContent] = useState("<p>Loading...</p>");
+
+  useEffect(() => {
+    if (!post) return;
+    const htmlPath = `/posts/${post.slug}/index.html`;
+
+    fetch(htmlPath)
+      .then((res) => {
+        if (!res.ok) throw new Error("404");
+        return res.text();
+      })
+      .then((html) => setHtmlContent(html))
+      .catch(() => setHtmlContent("<h2>Post not found</h2>"));
+  }, [post]);
 
   if (!post) {
     return (
@@ -19,9 +34,6 @@ const BlogPost = () => {
         <Header />
         <main className="flex-1 container py-20 text-center">
           <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-muted-foreground mb-8">
-            The blog post you're looking for doesn't exist.
-          </p>
           <Button asChild>
             <Link to="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -44,10 +56,6 @@ const BlogPost = () => {
         <title>{post.title} | Bits, Boot & Beyond</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
@@ -97,7 +105,7 @@ const BlogPost = () => {
 
             <Card className="mb-8">
               <CardContent className="prose prose-lg dark:prose-invert max-w-none pt-6">
-                <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }} />
+                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
               </CardContent>
             </Card>
 
