@@ -117,7 +117,7 @@
     <p><i>2025-11-01 — Abinash</i></p>
     <h1>Introduction to System Calls</h1>
 <p>The kernel is the core part of an operating system. It acts as a bridge between software applications and computer hardware.</p>
-<img src="images/syscalls/kernel.webp">
+<img src="content/images/syscalls/kernel.webp">
 
 <p>The kernel manages system resources such as the CPU, memory, and devices, ensuring that everything works together efficiently.<br>It handles essential tasks like running programs, accessing files, and communicating with devices such as printers and keyboards.</p>
 <p>System calls are the mechanism used to interact with the kernel. They are the only way for user-space programs to use kernel functionality.</p>
@@ -131,7 +131,7 @@
 <pre><code class="language-c">printf(&quot;Hello, World!&quot;);
 </code></pre>
 <p>Internally, this <code>printf()</code> function calls <code>print()</code> from the C library, which in turn calls <code>write()</code> from the same library, and finally invokes the <code>write()</code> system call.</p>
-<img src="images/syscalls/printftokernel.png">
+<img src="content/images/syscalls/printftokernel.png">
 
 <p><code>write()</code> is a system call. Linux on x86_64 provides around 400+ system calls.<br>Each one serves a unique purpose—some only read kernel state, while others modify it.</p>
 <h2>Syscalls</h2>
@@ -148,7 +148,7 @@
 <p>User-space applications cannot directly execute kernel code. They cannot simply call kernel functions because the kernel resides in a protected memory space.</p>
 <p>Instead, user-space programs must request the kernel to execute a system call. This triggers a mode switch from user-space to kernel-space, where the system call is executed by the kernel on behalf of the application.</p>
 <p>On early 32-bit systems, this was done using software interrupts. The interrupt <code>int $0x80</code> (128) was assigned as the system call handler.</p>
-<img src="images/syscalls/syshandler.png">
+<img src="content/images/syscalls/syshandler.png">
 
 <p>The system call handler executes the requested call. However, this interrupt mechanism was relatively slow, so modern x86 processors introduced <code>syscall</code> and <code>sysenter</code> instructions, which are much faster.</p>
 <h2>Parameter Passing</h2>
