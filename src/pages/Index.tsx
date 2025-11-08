@@ -13,16 +13,17 @@ const Index = () => {
   const categoryFilter = searchParams.get("category");
   
   const filteredPosts = categoryFilter
-    ? blogPosts.filter((post) => post.category === categoryFilter)
+    ? blogPosts.filter((post) => post.category === categoryFilter && post.hidden !==1)
     : blogPosts;
 
   const categories = ["All", "Linux", "Embedded", "SoC", "FPGA"];
   const [selectedCategory, setSelectedCategory] = useState(categoryFilter || "All");
 
-  const displayedPosts =
-    selectedCategory === "All"
-      ? blogPosts
-      : blogPosts.filter((post) => post.category === selectedCategory);
+const displayedPosts = blogPosts.filter(
+  (post) =>
+    post.hidden !== 1 &&
+    (selectedCategory === "All" || post.category === selectedCategory)
+);
 
   return (
     <>
@@ -51,6 +52,44 @@ const Index = () => {
                     {category}
                   </Button>
                 ))}
+              </div>
+            </div>
+
+            {/* Areas of Interest moved from About page - keep on Home for visibility */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <span className="h-5 w-5 text-primary"> </span>
+                Areas of Interest
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-muted">
+                  <div className="h-6 w-6 text-primary mb-2" />
+                  <h4 className="font-semibold mb-1">Linux Kernel & User Space</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Threading models, scheduling, memory management, LibC and driver development
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg bg-muted">
+                  <div className="h-6 w-6 text-secondary mb-2" />
+                  <h4 className="font-semibold mb-1">Embedded Systems</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Boot process, real-time Linux, Yocto, device drivers
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg bg-muted">
+                  <div className="h-6 w-6 text-accent mb-2" />
+                  <h4 className="font-semibold mb-1">Computer Architecture</h4>
+                  <p className="text-sm text-muted-foreground">
+                    RISC-V, MatrixMul, interconnects
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg bg-muted">
+                  <div className="h-6 w-6 text-tech-cyan mb-2" />
+                  <h4 className="font-semibold mb-1">FPGA Design</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Verilog/VHDL, synthesis, timing analysis, hardware acceleration
+                  </p>
+                </div>
               </div>
             </div>
 

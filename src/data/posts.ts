@@ -11,6 +11,7 @@ export interface BlogPost {
   tags: string[];
   readTime: number;
   coverImage?: string;
+  hidden: number;
 }
 
 // Import JSON data with type assertion

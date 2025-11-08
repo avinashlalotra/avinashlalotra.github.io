@@ -28,7 +28,8 @@ async function generatePostsJson() {
       author: data.author || 'Avinash',
       category: data.category || 'Linux',
       tags: data.tags || [],
-      readTime: data.readTime || readTime
+      readTime: data.readTime || readTime,
+      hidden: parseInt(data.hidden) || 0,
     };
   });
   

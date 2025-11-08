@@ -6,6 +6,7 @@ date: "2025-11-01"
 author: "Abinash"
 category: "Linux"
 tags: ["intro", "Kernel", "getting-started"]
+hidden: "1"
 ---
 # 🧩 My Linux Kernel Contributions (So Far)
 As part of my deep dive into systems programming and LFX Mentroship Summer 2025 I’ve been actively contributing to the Linux kernel — submitting patches, getting feedback from maintainers, and learning from the process. Here's a log of patches I've worked on, along with their current status and some notes about the outcomes.

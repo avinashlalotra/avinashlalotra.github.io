@@ -46,7 +46,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/avinashlalotra"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-muted hover:bg-muted-foreground/10 transition-colors"
@@ -55,22 +55,13 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/abinashsinghlalotra/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-muted hover:bg-muted-foreground/10 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-muted hover:bg-muted-foreground/10 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Terminal, Code, Cpu, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
+import ContributionCard from "@/components/ContributionCard";
 
 const About = () => {
   return (
@@ -19,9 +20,12 @@ const About = () => {
           <section className="container py-16 max-w-4xl">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
-              <p className="text-xl text-muted-foreground">
-                Systems programmer, kernel enthusiast, and hardware hacker
-              </p>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <p className="text-xl text-muted-foreground max-w-prose">
+                  Systems programmer, kernel enthusiast, and hardware hacker
+                </p>
+              </div>
+              <div className="mx-auto w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-6" aria-hidden />
             </div>
 
             <div className="grid gap-8">
@@ -29,10 +33,10 @@ const About = () => {
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="h-20 w-20 rounded-full bg-gradient-hero flex items-center justify-center text-white text-3xl font-bold">
-                      AL
+                      <img src="/content/images/abinashSingh.png"/>
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold">Avinash Lalotra</h2>
+                      <h2 className="text-2xl font-bold">Abinash Singh</h2>
                       <p className="text-muted-foreground">Systems Engineer</p>
                     </div>
                   </div>
@@ -53,39 +57,28 @@ const About = () => {
 
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <Code className="h-5 w-5 text-primary" />
-                    Areas of Intrest
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-lg bg-muted">
-                      <Terminal className="h-6 w-6 text-primary mb-2" />
-                      <h4 className="font-semibold mb-1">Linux Kernel & User Space</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Threading models, scheduling, memory management, LibC and driver development
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-muted">
-                      <Cpu className="h-6 w-6 text-secondary mb-2" />
-                      <h4 className="font-semibold mb-1">Embedded Systems</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Boot process, real-time Linux, Yocto, device drivers
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-muted">
-                      <Code className="h-6 w-6 text-accent mb-2" />
-                      <h4 className="font-semibold mb-1"> Computer Architecture</h4>
-                      <p className="text-sm text-muted-foreground">
-                        RISC-V, MatrixMul, interconnects
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-muted">
-                      <Terminal className="h-6 w-6 text-tech-cyan mb-2" />
-                      <h4 className="font-semibold mb-1">FPGA Design</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Verilog/VHDL, synthesis, timing analysis, hardware acceleration
-                      </p>
-                    </div>
+                  <h3 className="text-xl font-bold mb-2">Open Source Contributions</h3>
+                  <p className="text-sm text-muted-foreground mb-4">A selection of projects and contributions I maintain or have contributed to. Click any card to open the project or PR.</p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <ContributionCard
+                      name="Kernel"
+                      imageSrc="/content/images/linux.png"
+                      href="https://avinashlalotra.github.io/#/posts/linux-contrib"
+                    />
+
+                    <ContributionCard
+                      name="FOSSEE"
+                      imageSrc="/content/images/fossee.png"
+                      href="https://github.com/avinashlalotra/memset"
+                    />
+
+                    <ContributionCard
+                      name="Octave"
+                      imageSrc="/content/images/octave.png"
+                      href="https://github.com/avinashlalotra/rtl2c"
+                    />
+                    
                   </div>
                 </CardContent>
               </Card>
@@ -112,6 +105,12 @@ const About = () => {
                         Email
                       </a>
                     </Button>
+                      <Button asChild variant="outline">
+                        <a href="https://drive.google.com/file/d/164489bMc_Sxf5qEMLBYA4CC9wZ0yNQ-A/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          <Terminal className="mr-2 h-4 w-4" />
+                          Resume
+                        </a>
+                      </Button>
                   </div>
                 </CardContent>
               </Card>

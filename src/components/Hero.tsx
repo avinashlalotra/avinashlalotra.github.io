@@ -35,9 +35,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/#posts">Explore Articles</Link>
-            </Button>
+           <Button
+  size="lg"
+  className="text-lg px-8"
+  onClick={() => {
+    const section = document.getElementById("posts");
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Explore Articles
+</Button>
+
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/about">About Me</Link>
             </Button>
