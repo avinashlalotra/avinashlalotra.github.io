@@ -12,7 +12,7 @@ tags: ["Syscall", "Interrupts", "Kernel"]
 
 The kernel is the core part of an operating system. It acts as a bridge between software applications and computer hardware.
 
-<img src="/content/images/syscalls/kernel.webp">
+<img src="content/images/syscalls/kernel.webp">
 
 The kernel manages system resources such as the CPU, memory, and devices, ensuring that everything works together efficiently.  
 It handles essential tasks like running programs, accessing files, and communicating with devices such as printers and keyboards.
@@ -33,7 +33,7 @@ printf("Hello, World!");
 
 Internally, this `printf()` function calls `print()` from the C library, which in turn calls `write()` from the same library, and finally invokes the `write()` system call.
 
-<img src="/content/images/syscalls/printftokernel.png">
+<img src="content/images/syscalls/printftokernel.png">
 
 `write()` is a system call. Linux on x86_64 provides around 400+ system calls.  
 Each one serves a unique purpose—some only read kernel state, while others modify it.
@@ -69,7 +69,7 @@ Instead, user-space programs must request the kernel to execute a system call. T
 
 On early 32-bit systems, this was done using software interrupts. The interrupt `int $0x80` (128) was assigned as the system call handler.
 
-<img src="/content/images/syscalls/syshandler.png">
+<img src="content/images/syscalls/syshandler.png">
 
 The system call handler executes the requested call. However, this interrupt mechanism was relatively slow, so modern x86 processors introduced `syscall` and `sysenter` instructions, which are much faster.
 
