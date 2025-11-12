@@ -64,7 +64,7 @@ const About = () => {
                     <ContributionCard
                       name="Kernel"
                       imageSrc="/content/images/linux.png"
-                      href="https://avinashlalotra.github.io/#/posts/linux-contrib"
+                      href="http://localhost:8080/#/linuxkernel"
                     />
 
                     <ContributionCard

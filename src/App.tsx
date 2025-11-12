@@ -7,6 +7,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
+import LinuxKernel from "./components/LinuxKernel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/posts/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
+          <Route path="/linuxkernel" element={<LinuxKernel />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
