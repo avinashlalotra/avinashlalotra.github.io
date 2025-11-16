@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-  <section className="relative py-12 md:py-20 overflow-hidden">
+  <section className="relative pt-6 md:pt-8 pb-12 md:pb-16 overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-hero opacity-5" />
       

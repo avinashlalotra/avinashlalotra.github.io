@@ -40,14 +40,24 @@ for (const file of files) {
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 2rem;
-    max-width: calc(var(--max-content) + 320px);
+    max-width: 1300px;
     margin: 1.5rem auto;
-    padding: 1rem;
+    /* match SPA horizontal padding: px-4 md:px-8 lg:px-12 */
+    padding-left: 1rem;
+    padding-right: 1rem;
     align-items: start;
   }
 
+  @media (min-width: 768px) {
+    .post-page { padding-left: 2rem; padding-right: 2rem; }
+  }
+
+  @media (min-width: 1024px) {
+    .post-page { padding-left: 3rem; padding-right: 3rem; }
+  }
+
   @media (max-width: 1024px) {
-    .post-page { grid-template-columns: 1fr; padding: 1rem; }
+    .post-page { grid-template-columns: 1fr; }
     .post-toc { display: none; }
   }
 
@@ -117,6 +127,12 @@ for (const file of files) {
   .toc-list a.active { color: hsl(var(--primary)); font-weight: 600; }
 
   h1 code, h2 code, h3 code { background-color: hsl(var(--muted)); color: hsl(var(--foreground)); padding: 0.15em 0.3em; border-radius: 4px; font-size: 0.9em; }
+</style>
+
+<!-- fallback hero padding available for static viewers -->
+<style>
+  .hero-fallback { padding-top: 1.5rem; padding-bottom: 3rem; }
+  @media (min-width: 768px) { .hero-fallback { padding-top: 2rem; padding-bottom: 4rem; } }
 </style>
 
 <script>

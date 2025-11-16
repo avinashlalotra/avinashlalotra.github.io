@@ -16,6 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      /* Fallback hero padding in case compiled CSS isn't applied on the host */
+      .hero-fallback { padding-top: 1.5rem; padding-bottom: 3rem; }
+      @media (min-width: 768px) { .hero-fallback { padding-top: 2rem; padding-bottom: 4rem; } }
+    </style>
   </head>
 
   <body>
