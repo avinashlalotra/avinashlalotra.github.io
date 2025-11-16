@@ -1,7 +1,0 @@
-title,link,status,commit,commit_link
-fs/smb : fix build warning in cifs_open(),https://lore.kernel.org/all/20250705155714.805067-1-abinashsinghlalotra@gmail.com/,No Feedback
-fs/ceph : fix build warning in ceph_writepages_start(),https://lore.kernel.org/all/20250705155422.802775-1-abinashsinghlalotra@gmail.com/,Not able to do -> Feedback
-xen/gntdev: reduce stack usage by dynamically allocating gntdev_copy_batch,https://lore.kernel.org/all/CAJZ91LC610AsBZ8X3u8ZxAUhc6QT0FHeffQT0ARmnMgsGrdZQQ@mail.gmail.com/,Rejected
-usb: serial: usb_wwan: Fix data races by protecting dtr/rts state with a mutex,https://lore.kernel.org/all/2025070759-reach-facelift-f562@gregkh/,Not able to do -> Feedback
-mfd: twl4030-irq: remove redundant 'node' variable,https://lore.kernel.org/all/20250619120315.125620-1-abinashsinghlalotra@gmail.com/,Dropped -> Merge Conflict -> same patch
-btrfs: remove ASSERT in populate_free_space_tree for empty extent tree btrfs_search_slot_for_read() returns 1 when no items are found,,Chatgpt -> nvery bad experience
