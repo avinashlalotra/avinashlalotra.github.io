@@ -24,10 +24,6 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Linux", path: "/?category=Linux" },
-    { name: "Embedded", path: "/?category=Embedded" },
-    { name: "SoC", path: "/?category=SoC" },
-    { name: "FPGA", path: "/?category=FPGA" },
     { name: "About", path: "/about" },
   ];
 
