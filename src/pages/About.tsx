@@ -64,19 +64,19 @@ const About = () => {
                     <ContributionCard
                       name="Kernel"
                       imageSrc="/content/images/linux.png"
-                      href="https://avinashlalotra.github.io/#/linuxkernel"
+                      href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=Abinash+Singh"
                     />
 
                     <ContributionCard
                       name="FOSSEE"
                       imageSrc="/content/images/fossee.png"
-                      href="https://github.com/avinashlalotra/memset"
+                      href="https://github.com/avinashlalotra?tab=overview&from=2024-12-01&to=2024-12-31&org=FOSSEE"
                     />
 
                     <ContributionCard
                       name="Octave"
                       imageSrc="/content/images/octave.png"
-                      href="https://github.com/avinashlalotra/rtl2c"
+                      href="https://sourceforge.net/p/octave/signal/ci/7179cef8222ced35c9e8db7b94fd7eb65b7c9fb3/"
                     />
                     
                   </div>
