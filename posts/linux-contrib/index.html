@@ -109,6 +109,12 @@
   h1 code, h2 code, h3 code { background-color: hsl(var(--muted)); color: hsl(var(--foreground)); padding: 0.15em 0.3em; border-radius: 4px; font-size: 0.9em; }
 </style>
 
+<!-- fallback hero padding available for static viewers -->
+<style>
+  .hero-fallback { padding-top: 1.5rem; padding-bottom: 3rem; }
+  @media (min-width: 768px) { .hero-fallback { padding-top: 2rem; padding-bottom: 4rem; } }
+</style>
+
 <script>
   window.location.replace(window.location.origin + '/?redirect=' + window.location.pathname);
 </script>
